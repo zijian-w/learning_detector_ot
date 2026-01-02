@@ -6,10 +6,7 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 
-try:
-    from .model import CNNstack
-except ImportError:  # allows running as a plain script/notebook with `ivml_cleanup/` on sys.path
-    from model import CNNstack
+from model import CNNstack
 
 
 def _relative_l2_loss(yhat: torch.Tensor, y: torch.Tensor) -> torch.Tensor:
